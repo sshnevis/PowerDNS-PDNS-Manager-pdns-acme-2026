@@ -14,6 +14,11 @@ During the implementation of this stack, several challenges were encountered and
 
 ### 1. Database Compatibility
 The default databases for these tools are not fully synchronized out-of-the-box. You must manually update/migrate the database schema to ensure seamless integration between PowerDNS and the management panel.
+like this:
+```
+ALTER TABLE domains ADD COLUMN options VARCHAR(64000) DEFAULT NULL;
+ALTER TABLE domains ADD COLUMN catalog VARCHAR(255) DEFAULT NULL;
+```
 
 ### 2. Development Environment (PDNS Manager)
 Please note that **PDNS Manager** has not received official updates for a few years. If you plan to modify or develop the codebase:
