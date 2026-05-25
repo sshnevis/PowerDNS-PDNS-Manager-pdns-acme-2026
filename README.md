@@ -49,9 +49,11 @@ To issue a wildcard certificate, you must have two separate ACME records for eac
 }
   }
 }
-
+```
 
 ### 3. UI/UX Bugs
+
 The PDNS Manager web interface is built with Angular. Due to its lack of recent updates, there are several UI bugs and functional inconsistencies. You will likely need to debug and patch these manually within the frontend code to suit your needs.
+
 ---------------
 Good luck with your implementation!
