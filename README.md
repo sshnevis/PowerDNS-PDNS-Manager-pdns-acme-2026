@@ -6,6 +6,12 @@ This repository shares practical experiences and configurations for setting up a
 - **PDNS Manager**: A simple and lightweight web-based control panel for PowerDNS.
 - **PDNS-ACME**: A tool for managing Let's Encrypt SSL certificates (ACME) via PowerDNS.
 
+from source 1: https://github.com/PowerDNS/pdns
+
+from source 2: https://github.com/loewexy/pdnsmanager
+
+from source 3: https://github.com/loewexy/pdns-acme
+
 ---
 
 ## Technical Insights & Tips
@@ -23,10 +29,12 @@ ALTER TABLE domains ADD COLUMN catalog VARCHAR(255) DEFAULT NULL;
 ### 2. Development Environment (PDNS Manager)
 Please note that **PDNS Manager** has not received official updates for a few years. If you plan to modify or develop the codebase:
 - You must use **Node.js v12** to build the environment and handle dependencies.
+- You must add some filter to dns validate when user creates record
 
 ### 3. PDNS-ACME & Wildcard SSL Challenges
 The **PDNS-ACME** tool operates in a semi-automatic manner. One of the main challenges was configuring the JSON file for **Wildcard Certificates**. 
 To issue a wildcard certificate, you must have two separate ACME records for each domain and map them correctly in the JSON configuration.
+auto-sync and cron must be written.
 
 #### Example JSON Configuration:
 ```json
